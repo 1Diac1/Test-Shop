@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Test_Shop.WebAPI</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Test-Shop.Application\Test-Shop.Application.csproj" />
+    <ProjectReference Include="..\Test-Shop.Infrastructure.Persistence\Test-Shop.Infrastructure.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>
