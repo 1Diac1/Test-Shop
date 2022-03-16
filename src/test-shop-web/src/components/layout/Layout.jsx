@@ -30,6 +30,7 @@ const Layout = () => {
   return (
     <BrowserRouter>
       <Route
+        path="/administration"
         render={(props) => (
           <div className={`layout ${themeReducer.mode} ${themeReducer.color}`}>
             <Sidebar {...props} />

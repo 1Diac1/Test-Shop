@@ -1,42 +1,42 @@
 [
   {
     "display_name": "Главная панель",
-    "route": "/",
+    "route": "/administration",
     "icon": "bx bx-category-alt"
   },
   {
     "display_name": "Клиенты",
-    "route": "/customers",
+    "route": "/administration/customers",
     "icon": "bx bx-user-pin"
   },
   {
     "display_name": "Товары",
-    "route": "/products",
+    "route": "/administration/products",
     "icon": "bx bx-package"
   },
   {
     "display_name": "Заказы",
-    "route": "/orders",
+    "route": "/administration/orders",
     "icon": "bx bx-cart"
   },
   {
     "display_name": "Аналитика",
-    "route": "/analytics",
+    "route": "/administration/analytics",
     "icon": "bx bx-bar-chart-alt"
   },
   {
     "display_name": "Категории",
-    "route": "/categories",
+    "route": "/administration/categories",
     "icon": "bx bx-list-ol"
   },
   {
     "display_name": "Скидки",
-    "route": "/discount",
+    "route": "/administration/discount",
     "icon": "bx bx-gift"
   },
   {
     "display_name": "Настройки",
-    "route": "/settings",
+    "route": "/administration/settings",
     "icon": "bx bx-cog"
   }
 ]

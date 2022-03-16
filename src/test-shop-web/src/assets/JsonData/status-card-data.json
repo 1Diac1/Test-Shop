@@ -7,16 +7,16 @@
   {
     "icon": "bx bx-cart",
     "count": "2,001",
-    "title": "Daily visits"
+    "title": "посещений"
   },
   {
     "icon": "bx bx-dollar-circle",
     "count": "$2,632",
-    "title": "Total income"
+    "title": "общая прибль"
   },
   {
     "icon": "bx bx-receipt",
     "count": "1,711",
-    "title": "Total orders"
+    "title": "всего заказов"
   }
 ]

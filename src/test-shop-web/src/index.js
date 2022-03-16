@@ -9,13 +9,13 @@ import './assets/css/grid.scss';
 import './assets/css/theme.scss';
 import './assets/css/index.scss';
 
-// import App from './App';
-
+import App from './App';
 import Layout from './components/layout/Layout';
 
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
+      <App />
       <Layout />
     </React.StrictMode>
   </Provider>,
