@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Login.module.css';
+import styles from './Login.module.scss';
 import { connect } from 'react-redux';
 import { loginThunk } from '../../redux/authReducer';
 import { logoutThunk } from './../../redux/authReducer';

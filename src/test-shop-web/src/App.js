@@ -3,13 +3,17 @@ import React from 'react';
 
 import Header from './components/Header/Header';
 // import Navbar from './components/Navbar/Navbar';
+import './assets/boxicons-2.0.7/css/boxicons.min.scss';
+import './assets/css/grid.scss';
+import './assets/css/index.scss';
 
 const App = () => {
   return (
+    <div>hello</div>
     // <BrowserRouter>
     //   <div className="Wrapper">
     //     <div className="head">
-    <Header />
+    // <Header />
     //     </div>
     //     <div className="navigation">
     //       <Navbar />

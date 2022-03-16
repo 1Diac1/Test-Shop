@@ -4,7 +4,6 @@ const TOGLE_LOADING_STATUS = 'TOGLE_LOADING_STATUS';
 const TOGLE_AUTH_STATUS = 'TOGLE_AUTH_STATUS';
 const SET_USER_DATA = 'SET_USER_DATA';
 
-
 let initialState = {
   id: null,
   email: null,
