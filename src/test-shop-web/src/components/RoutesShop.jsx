@@ -11,10 +11,6 @@ const RoutesShop = () => {
       <Route path="/administration" exact component={Dashboard} />
       <Route path="/administration/customers" component={Customers} />
       <Route path="/administration/customers" component={Customers} />
-      {/* <Route path="/customers" component={Customers} />
-      <Route path="/customers" component={Customers} />
-      <Route path="/customers" component={Customers} />
-      <Route path="/customers" component={Customers} /> */}
     </Switch>
   );
 };

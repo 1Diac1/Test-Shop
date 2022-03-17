@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './redux/reduxStore';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import './index.scss';
 import './assets/boxicons-2.0.7/css/boxicons.min.scss';
@@ -15,8 +16,12 @@ import Layout from './components/layout/Layout';
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
-      <App />
-      <Layout />
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact component={App} />
+          <Route path="/administration" exact component={Layout} />
+        </Switch>
+      </BrowserRouter>
     </React.StrictMode>
   </Provider>,
   document.getElementById('root'),

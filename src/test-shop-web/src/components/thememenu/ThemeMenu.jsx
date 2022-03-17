@@ -1,10 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 import './thememenu.scss';
 
-import { useDispatch } from 'react-redux';
-
 import { setMode as setModeAC, setColor as setColorAC } from '../../redux/themeReducer';
+
 
 const mode_settings = [
   {
