@@ -11,7 +11,7 @@ import './assets/css/theme.scss';
 import './assets/css/index.scss';
 
 import App from './App';
-import Layout from './components/layout/Layout';
+import AdminPanel from './components/AdminPanel/AdminPanel';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -19,7 +19,7 @@ ReactDOM.render(
       <BrowserRouter>
         <Switch>
           <Route path="/" exact component={App} />
-          <Route path="/administration" exact component={Layout} />
+          <Route path="/administration" exact component={AdminPanel} />
         </Switch>
       </BrowserRouter>
     </React.StrictMode>

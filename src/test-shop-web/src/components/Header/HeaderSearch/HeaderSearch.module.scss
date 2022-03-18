@@ -1,0 +1,44 @@
+.header__wrapper {
+  height: 113px;
+  background: rgb(255, 255, 255);
+  .container {
+    margin-top: 40px;
+    width: 1140px;
+    margin: 0 auto;
+    padding-top: 35px;
+    display: flex;
+    justify-content: space-between;
+    ul {
+      padding-top: 8px;
+      li {
+        cursor: pointer;
+        margin-left: 30px;
+        display: inline-block;
+      }
+    }
+  }
+  .logo {
+    width: 113px;
+    margin-right: 35px;
+    img {
+      width: 100%;
+    }
+  }
+  .search__form input {
+    width: 220px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 60px 0 15px;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    border-radius: 3px;
+    border: none;
+    background: #fff;
+    color: #333;
+    border-radius: 0;
+    height: 40px;
+    width: 250px;
+    border: 1px solid #d6d6d6;
+  }
+}
