@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import './layout.scss';
+import './AdminPanel.scss';
 
 import Sidebar from '../sidebar/Sidebar';
 import TopNav from '../topnav/TopNav';
@@ -12,7 +12,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { setMode, setColor } from '../../redux/themeReducer';
 
-const Layout = () => {
+const AdminPanel = () => {
   const themeReducer = useSelector((state) => state.ThemeReducer);
 
   const dispatch = useDispatch();
@@ -47,4 +47,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default AdminPanel;
