@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using MediatR;
 using Test_Shop.Application.Common.Models;
+using Test_Shop.Application.Common.Models.Responses;
 using Test_Shop.Application.Features.Queries;
 using Test_Shop.Application.Interfaces.Repositories;
 using Test_Shop.Domain.Entities;

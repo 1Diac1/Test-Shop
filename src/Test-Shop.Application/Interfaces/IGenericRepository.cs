@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Test_Shop.Application.Common.Models;
+using Test_Shop.Application.Common.Models.Responses;
 
 namespace Test_Shop.Application.Interfaces
 {

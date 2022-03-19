@@ -7,6 +7,7 @@ using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using Test_Shop.Application.Common.Models;
+using Test_Shop.Application.Common.Models.Responses;
 
 namespace Test_Shop.WebAPI.Extensions
 {

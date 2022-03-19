@@ -2,9 +2,9 @@
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Test_Shop.Application.Common.Models.Requests;
 using Test_Shop.Application.Features.Commands;
 using Test_Shop.Application.Features.Queries;
-using Test_Shop.Domain.Requests;
 
 namespace Test_Shop.WebAPI.Controllers
 {

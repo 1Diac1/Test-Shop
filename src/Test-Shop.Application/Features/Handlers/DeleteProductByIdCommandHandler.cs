@@ -7,6 +7,7 @@ using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using Test_Shop.Application.Common.Models;
+using Test_Shop.Application.Common.Models.Responses;
 using Test_Shop.Application.Features.Commands;
 using Test_Shop.Application.Interfaces.Repositories;
 

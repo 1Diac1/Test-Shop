@@ -1,6 +1,7 @@
 ﻿using System;
 using MediatR;
 using Test_Shop.Application.Common.Models;
+using Test_Shop.Application.Common.Models.Responses;
 
 namespace Test_Shop.Application.Features.Commands
 {

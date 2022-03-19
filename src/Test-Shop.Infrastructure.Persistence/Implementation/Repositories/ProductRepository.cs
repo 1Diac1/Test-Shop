@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Test_Shop.Application.Common.Models;
+using Test_Shop.Application.Common.Models.Responses;
 using Test_Shop.Application.Interfaces.Repositories;
 using Test_Shop.Domain.Entities;
 using Test_Shop.Infrastructure.Persistence.Data;

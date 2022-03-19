@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Test_Shop.Domain.Requests
+namespace Test_Shop.Application.Common.Models.Requests
 {
     public class BaseRequest
     {

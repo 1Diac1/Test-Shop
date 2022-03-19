@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Test-Shop.Application\Test-Shop.Application.csproj" />
+    <ProjectReference Include="..\Test-Shop.Infrastructure.Identity\Test-Shop.Infrastructure.Identity.csproj" />
     <ProjectReference Include="..\Test-Shop.Infrastructure.Persistence\Test-Shop.Infrastructure.Persistence.csproj" />
   </ItemGroup>
 

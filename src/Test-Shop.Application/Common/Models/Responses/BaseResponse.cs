@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Test_Shop.Application.Common.Models
+namespace Test_Shop.Application.Common.Models.Responses
 {
     public class BaseResponse
     {
