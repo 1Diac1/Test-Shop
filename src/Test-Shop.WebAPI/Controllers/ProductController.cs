@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Test_Shop.Application.Common.Models.Requests;
@@ -8,6 +9,7 @@ using Test_Shop.Application.Features.Queries;
 
 namespace Test_Shop.WebAPI.Controllers
 {
+    [Authorize(Policy = "Admin")]
     [ApiController]
     [Route("api/[controller]")]
     public class ProductController : ControllerBase

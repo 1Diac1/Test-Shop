@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -41,7 +42,7 @@ namespace Test_Shop.Infrastructure.Identity
             services.AddScoped<IIdentityService, IdentityService>();
             services.AddScoped<IRefreshTokenService, RefreshTokenService>();
 
-            configuration.GetSection("Authentication").Bind(new JwtConfiguration());
+            services.Configure<JwtConfiguration>(configuration.GetSection("Authentication"));
 
             var appSettingsKey = configuration.GetValue<string>("Authentication:AccessTokenSecret");
 
@@ -63,6 +64,10 @@ namespace Test_Shop.Infrastructure.Identity
                     ClockSkew = TimeSpan.Zero
                 };
             });
+
+            services.AddAuthorization(options =>
+                options.AddPolicy("Admin", policy =>
+                    policy.RequireClaim(ClaimsIdentity.DefaultRoleClaimType, "Administrator")));
         }
     }
 }

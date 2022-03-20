@@ -13,7 +13,7 @@ namespace Test_Shop.Infrastructure.Identity.Data
     {
         public IdentityContext CreateDbContext(string[] args)
         {
-            // TODO: Make connection string to config 
+            // TODO: get connection string from config 
             var optionsBuilder = new DbContextOptionsBuilder<IdentityContext>();
 
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=test-shop-identity;Trusted_Connection=True;",

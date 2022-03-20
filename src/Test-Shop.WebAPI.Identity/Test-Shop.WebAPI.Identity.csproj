@@ -5,4 +5,8 @@
     <RootNamespace>Test_Shop.WebAPI.Identity</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Test-Shop.WebAPI\Test-Shop.WebAPI.csproj" />
+  </ItemGroup>
+
 </Project>

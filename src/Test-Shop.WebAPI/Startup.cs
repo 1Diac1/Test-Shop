@@ -37,6 +37,9 @@ namespace Test_Shop.WebAPI
 
             app.UseRouting();
 
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseCustomExceptionHandler();
 
             app.UseEndpoints(endpoints =>
