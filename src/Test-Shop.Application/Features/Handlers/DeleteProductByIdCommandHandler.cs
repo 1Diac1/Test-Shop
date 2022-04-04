@@ -1,45 +1,44 @@
-﻿
-
-using System;
+﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using Test_Shop.Application.Common.Models;
-using Test_Shop.Application.Common.Models.Responses;
+using Test_Shop.Application.Common.Exceptions;
 using Test_Shop.Application.Features.Commands;
+using Test_Shop.Application.Interfaces;
 using Test_Shop.Application.Interfaces.Repositories;
+using Test_Shop.Domain.Entities;
 
 namespace Test_Shop.Application.Features.Handlers
 {
     public class DeleteProductByIdCommandHandler 
-        : IRequestHandler<DeleteProductByIdCommand, BaseResponse>
+        : IRequestHandler<DeleteProductByIdCommand>
     {
-        private readonly IProductRepository _productRepository;
-        private readonly IMapper _mapper;
+        private readonly IApplicationDbContext _applicationDbContext;
         private readonly ILogger _logger;
 
         public DeleteProductByIdCommandHandler(
-            IProductRepository productRepository, 
-            IMapper mapper, 
-            ILogger<DeleteProductByIdCommand> logger)
+            ILogger<DeleteProductByIdCommand> logger, 
+            IApplicationDbContext applicationDbContext)
         {
-            _productRepository = productRepository;
-            _mapper = mapper;
             _logger = logger;
+            _applicationDbContext = applicationDbContext;
         }
 
-        public async Task<BaseResponse> Handle(DeleteProductByIdCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(DeleteProductByIdCommand request, CancellationToken cancellationToken)
         {
-            var response = await _productRepository.DeleteAsync(request.Id);
+            var entity = await _applicationDbContext.Products.FindAsync(request.Id, cancellationToken);
 
-            if (response.Success is false)
-                return response;
+            if (entity is null)
+                throw new NotFoundException(nameof(Product), request.Id);
+
+            _applicationDbContext.Products.Remove(entity);
+            await _applicationDbContext.SaveChangesAsync(cancellationToken);
 
             _logger.LogInformation($"Delete Entity: Product had been successfully deleted ({DateTime.Now:G}).");
 
-            return response;
+            return Unit.Value;
         }
     }
 }

@@ -28,7 +28,7 @@ namespace Test_Shop.WebAPI.Controllers
             var query = new GetAllProductsQuery();
             var result = await _mediator.Send(query);
 
-            return result.Success ? (IActionResult)Ok(result) : BadRequest(result);
+            return result.Success ? (IActionResult) Ok(result) : BadRequest(result);
         }
 
         [HttpGet("get")]

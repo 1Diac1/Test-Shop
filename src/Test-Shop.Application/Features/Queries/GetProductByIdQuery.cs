@@ -1,18 +1,11 @@
 ﻿using System;
 using MediatR;
-using Test_Shop.Application.Common.Models;
-using Test_Shop.Application.Common.Models.Responses;
-using Test_Shop.Domain.Entities;
+using Test_Shop.Application.Features.DTOs;
 
 namespace Test_Shop.Application.Features.Queries
 {
-    public class GetProductByIdQuery : IRequest<DataResponse<Product>> 
+    public class GetProductByIdQuery : IRequest<ProductDto> 
     {
         public Guid Id { get; set; }
-
-        public GetProductByIdQuery(Guid id)
-        {
-            Id = id;
-        }
     }
 }

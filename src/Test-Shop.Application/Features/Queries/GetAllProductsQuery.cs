@@ -1,12 +1,10 @@
 ﻿using MediatR;
 using System.Collections.Generic;
-using Test_Shop.Application.Common.Models;
-using Test_Shop.Application.Common.Models.Responses;
-using Test_Shop.Domain.Entities;
+using Test_Shop.Application.Features.DTOs;
 
 namespace Test_Shop.Application.Features.Queries
 {
-    public class GetAllProductsQuery : IRequest<DataResponse<IEnumerable<Product>>>
+    public class GetAllProductsQuery : IRequest<IEnumerable<ProductDto>>
     {
 
     }

@@ -1,30 +1,37 @@
 ﻿using MediatR;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Test_Shop.Application.Common.Models;
-using Test_Shop.Application.Common.Models.Responses;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using Microsoft.EntityFrameworkCore;
+using Test_Shop.Application.Features.DTOs;
 using Test_Shop.Application.Features.Queries;
-using Test_Shop.Application.Interfaces.Repositories;
-using Test_Shop.Domain.Entities;
+using Test_Shop.Application.Interfaces;
 
 namespace Test_Shop.Application.Features.Handlers
 {
-    // TODO: Make AutoMapper
-    public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, DataResponse<IEnumerable<Product>>>
+    public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, IEnumerable<ProductDto>>
     {
-        private readonly IProductRepository _productRepository;
+        private readonly IApplicationDbContext _applicationDbContext;
+        private readonly IMapper _mapper;
 
-        public GetAllProductsQueryHandler(IProductRepository productRepository)
+        public GetAllProductsQueryHandler(
+            IApplicationDbContext applicationDbContext, 
+            IMapper mapper)
         {
-            _productRepository = productRepository;
+            _applicationDbContext = applicationDbContext;
+            _mapper = mapper;
         }
 
-        public async Task<DataResponse<IEnumerable<Product>>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
-        {
-            var response = await _productRepository.GetAllAsync();
 
-            return response;
+        public async Task<IEnumerable<ProductDto>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
+        {
+            return await _applicationDbContext.Products
+                .OrderBy(x => x.Name)
+                .ProjectTo<ProductDto>(_mapper.ConfigurationProvider)
+                .ToListAsync(cancellationToken);
         }
     }
 }

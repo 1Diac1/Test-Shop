@@ -1,11 +1,9 @@
 ﻿using System;
 using MediatR;
-using Test_Shop.Application.Common.Models;
-using Test_Shop.Application.Common.Models.Responses;
 
 namespace Test_Shop.Application.Features.Commands
 {
-    public class UpdateProductCommand : IRequest<BaseResponse>
+    public class UpdateProductCommand : IRequest
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
