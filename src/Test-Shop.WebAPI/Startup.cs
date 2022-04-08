@@ -40,8 +40,8 @@ namespace Test_Shop.WebAPI
             services.Configure<ApiBehaviorOptions>(options =>
                 options.SuppressModelStateInvalidFilter = true);
 
-            services.AddHealthChecks()
-                .AddDbContextCheck<ApplicationDbContext>();
+            services.AddHealthChecksUI()
+                .AddInMemoryStorage();
 
             services.AddSwaggerGen();
         }
@@ -59,7 +59,6 @@ namespace Test_Shop.WebAPI
                 app.UseHsts();
             }
 
-            app.UseHealthChecks("/health");
             app.UseHttpsRedirection();
 
             app.UseSwagger();
@@ -77,6 +76,7 @@ namespace Test_Shop.WebAPI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
+                endpoints.MapHealthChecksUI();
             });
         }
     }
