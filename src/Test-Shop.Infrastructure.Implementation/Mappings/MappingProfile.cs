@@ -1,8 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using Test_Shop.Infrastructure.Interfaces.Mappings;
 using System.Reflection;
+using System.Linq;
 using AutoMapper;
-using Test_Shop.Infrastructure.Interfaces.Mappings;
+using System;
 
 namespace Test_Shop.Infrastructure.Implementation.Mappings
 {

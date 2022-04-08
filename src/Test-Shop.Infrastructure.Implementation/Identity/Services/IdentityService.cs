@@ -1,10 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
-using Test_Shop.Infrastructure.Interfaces.Services;
-using Test_Shop.Shared.Models;
+﻿using Test_Shop.Infrastructure.Interfaces.Services;
 using Test_Shop.Shared.Models.Identity;
 using Test_Shop.Shared.Models.Requests;
+using Microsoft.AspNetCore.Identity;
+using Test_Shop.Shared.Models;
+using System.Threading.Tasks;
+using System;
 
 namespace Test_Shop.Infrastructure.Implementation.Identity.Services
 {

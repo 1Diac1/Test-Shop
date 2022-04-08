@@ -1,12 +1,12 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
+using Test_Shop.Infrastructure.Interfaces.DataAccess;
 using IdentityServer4.EntityFramework.Options;
-using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
+using Test_Shop.Shared.Models.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Test_Shop.Domain.Entities;
-using Test_Shop.Infrastructure.Interfaces.DataAccess;
-using Test_Shop.Shared.Models.Identity;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace Test_Shop.DataAccess.MsSql.Data
 {

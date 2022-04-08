@@ -1,16 +1,16 @@
+using Test_Shop.Infrastructure.Interfaces.Services;
+using Microsoft.Extensions.DependencyInjection;
+using Test_Shop.Infrastructure.Implementation;
+using Microsoft.Extensions.Configuration;
+using Test_Shop.DataAccess.MsSql.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Test_Shop.Application;
 using Test_Shop.DataAccess.MsSql;
-using Test_Shop.DataAccess.MsSql.Data;
-using Test_Shop.Infrastructure.Implementation;
-using Test_Shop.Infrastructure.Interfaces.Services;
-using Test_Shop.WebAPI.Filters;
 using Test_Shop.WebAPI.Services;
+using Microsoft.AspNetCore.Mvc;
+using Test_Shop.WebAPI.Filters;
+using Test_Shop.Application;
 
 namespace Test_Shop.WebAPI
 {

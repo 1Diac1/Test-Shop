@@ -1,11 +1,11 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
+﻿using Test_Shop.Infrastructure.Interfaces.Services;
 using Microsoft.AspNetCore.Authorization;
+using Test_Shop.Shared.Models.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Test_Shop.Infrastructure.Interfaces.Services;
 using Test_Shop.Shared.Models;
-using Test_Shop.Shared.Models.Identity;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace Test_Shop.Infrastructure.Implementation.Identity.Services
 {

@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Test_Shop.Infrastructure.Implementation.Settings;
+using Test_Shop.Shared.Models.Identity;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Options;
+using System.Collections.Generic;
 using System.Security.Claims;
 using System.Text;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
-using Test_Shop.Infrastructure.Implementation.Settings;
-using Test_Shop.Shared.Models.Identity;
+using System;
 
 namespace Test_Shop.Infrastructure.Implementation.Identity.Services
 {

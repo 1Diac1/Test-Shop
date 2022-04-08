@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Test_Shop.Domain.Entities;
 using System.Threading.Tasks;
-using Test_Shop.Domain.Entities;
+using System;
 
 namespace Test_Shop.Infrastructure.Interfaces.Services
 {

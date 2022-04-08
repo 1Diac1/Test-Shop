@@ -1,13 +1,13 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-using MediatR;
+﻿using Test_Shop.Infrastructure.Interfaces.DataAccess;
+using Test_Shop.Application.Features.Commands;
+using Test_Shop.Application.Common.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Test_Shop.Application.Common.Exceptions;
-using Test_Shop.Application.Features.Commands;
 using Test_Shop.Domain.Entities;
-using Test_Shop.Infrastructure.Interfaces.DataAccess;
+using System.Threading.Tasks;
+using System.Threading;
+using MediatR;
+using System;
 
 namespace Test_Shop.Application.Features.Handlers
 {

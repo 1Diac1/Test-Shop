@@ -1,6 +1,6 @@
-﻿using MediatR;
+﻿using Test_Shop.Application.Features.DTOs;
 using System.Collections.Generic;
-using Test_Shop.Application.Features.DTOs;
+using MediatR;
 
 namespace Test_Shop.Application.Features.Queries
 {

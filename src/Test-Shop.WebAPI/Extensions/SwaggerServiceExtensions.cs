@@ -1,7 +1,4 @@
-﻿using System.Linq;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace Test_Shop.WebAPI.Extensions
+﻿namespace Test_Shop.WebAPI.Extensions
 {
     public static class SwaggerServiceExtensions
     {

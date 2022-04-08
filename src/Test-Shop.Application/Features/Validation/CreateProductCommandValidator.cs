@@ -1,8 +1,8 @@
-﻿using FluentValidation;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using Test_Shop.Infrastructure.Interfaces.Repositories;
 using Test_Shop.Application.Features.Commands;
-using Test_Shop.Infrastructure.Interfaces.Repositories;
+using System.Threading.Tasks;
+using System.Threading;
+using FluentValidation;
 
 namespace Test_Shop.Application.Features.Validation
 {

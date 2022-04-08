@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Test_Shop.Application.Features.DTOs;
 using MediatR;
-using Test_Shop.Application.Features.DTOs;
+using System;
 
 namespace Test_Shop.Application.Features.Queries
 {

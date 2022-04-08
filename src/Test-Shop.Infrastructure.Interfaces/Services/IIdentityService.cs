@@ -1,6 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using Test_Shop.Shared.Models.Requests;
 using Test_Shop.Shared.Models;
-using Test_Shop.Shared.Models.Requests;
+using System.Threading.Tasks;
 
 namespace Test_Shop.Infrastructure.Interfaces.Services
 {

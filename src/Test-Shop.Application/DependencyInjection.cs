@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Test_Shop.Application.Common.Behaviours;
 using System.Reflection;
 using FluentValidation;
 using MediatR;
-using Test_Shop.Application.Common.Behaviours;
 
 namespace Test_Shop.Application
 {

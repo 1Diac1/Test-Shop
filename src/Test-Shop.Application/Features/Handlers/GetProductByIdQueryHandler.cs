@@ -1,14 +1,13 @@
-﻿using System.Threading;
+﻿using Test_Shop.Infrastructure.Interfaces.DataAccess;
+using Test_Shop.Application.Common.Exceptions;
+using Test_Shop.Application.Features.Queries;
+using Test_Shop.Application.Features.DTOs;
+using Microsoft.EntityFrameworkCore;
+using Test_Shop.Domain.Entities;
 using System.Threading.Tasks;
+using System.Threading;
 using AutoMapper;
 using MediatR;
-using Microsoft.AspNetCore.Http.Features;
-using Microsoft.EntityFrameworkCore;
-using Test_Shop.Application.Common.Exceptions;
-using Test_Shop.Application.Features.DTOs;
-using Test_Shop.Application.Features.Queries;
-using Test_Shop.Domain.Entities;
-using Test_Shop.Infrastructure.Interfaces.DataAccess;
 
 namespace Test_Shop.Application.Features.Handlers
 {

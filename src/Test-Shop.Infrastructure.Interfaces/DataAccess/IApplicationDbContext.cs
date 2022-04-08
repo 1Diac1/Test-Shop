@@ -1,7 +1,7 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Test_Shop.Domain.Entities;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace Test_Shop.Infrastructure.Interfaces.DataAccess
 {

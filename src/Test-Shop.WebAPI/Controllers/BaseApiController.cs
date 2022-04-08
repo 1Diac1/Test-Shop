@@ -1,6 +1,6 @@
-﻿using MediatR;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
+using MediatR;
 
 namespace Test_Shop.WebAPI.Controllers
 {

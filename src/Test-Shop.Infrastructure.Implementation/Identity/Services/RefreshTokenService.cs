@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Test_Shop.Domain.Entities;
-using Test_Shop.Infrastructure.Interfaces.DataAccess;
+﻿using Test_Shop.Infrastructure.Interfaces.DataAccess;
 using Test_Shop.Infrastructure.Interfaces.Services;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using Test_Shop.Domain.Entities;
+using System.Threading.Tasks;
+using System.Threading;
+using System.Linq;
+using System;
 
 namespace Test_Shop.Infrastructure.Implementation.Identity.Services
 {

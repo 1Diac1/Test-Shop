@@ -1,6 +1,6 @@
-﻿using System.Linq;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Test_Shop.Shared.Models;
+using System.Linq;
 
 namespace Test_Shop.Infrastructure.Implementation.Identity
 {

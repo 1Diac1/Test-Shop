@@ -1,5 +1,5 @@
-﻿using FluentValidation;
-using Test_Shop.Application.Features.Commands;
+﻿using Test_Shop.Application.Features.Commands;
+using FluentValidation;
 
 namespace Test_Shop.Application.Features.Validation
 {

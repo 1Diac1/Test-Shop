@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using AutoMapper;
-using Test_Shop.Domain.Entities;
 using Test_Shop.Infrastructure.Interfaces.Mappings;
+using Test_Shop.Domain.Entities;
 
 namespace Test_Shop.Application.Features.DTOs
 {

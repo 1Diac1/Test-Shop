@@ -1,6 +1,6 @@
-﻿using System.Security.Claims;
+﻿using Test_Shop.Infrastructure.Interfaces.Services;
 using Microsoft.AspNetCore.Http;
-using Test_Shop.Infrastructure.Interfaces.Services;
+using System.Security.Claims;
 
 namespace Test_Shop.WebAPI.Services
 {

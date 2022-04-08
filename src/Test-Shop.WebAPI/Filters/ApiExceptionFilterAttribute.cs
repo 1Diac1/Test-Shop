@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using Test_Shop.Application.Common.Exceptions;
+using Microsoft.AspNetCore.Mvc.Filters;
 using System.Collections.Generic;
-using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
-using Test_Shop.Application.Common.Exceptions;
+using System.Linq;
+using System;
 
 namespace Test_Shop.WebAPI.Filters
 {

@@ -1,12 +1,12 @@
-﻿using System;
-using System.Linq;
-using System.Reflection;
-using System.Threading;
-using System.Threading.Tasks;
-using MediatR;
+﻿using Test_Shop.Infrastructure.Interfaces.Services;
 using Test_Shop.Application.Common.Exceptions;
 using Test_Shop.Application.Common.Security;
-using Test_Shop.Infrastructure.Interfaces.Services;
+using System.Threading.Tasks;
+using System.Reflection;
+using System.Threading;
+using System.Linq;
+using MediatR;
+using System;
 
 namespace Test_Shop.Application.Common.Behaviours
 {

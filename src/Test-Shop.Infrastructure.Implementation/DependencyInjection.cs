@@ -1,16 +1,16 @@
-﻿using System.Reflection;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Test_Shop.DataAccess.MsSql.Data;
+﻿using Test_Shop.Infrastructure.Implementation.Persistence.Repositories;
 using Test_Shop.Infrastructure.Implementation.Identity.Services;
-using Test_Shop.Infrastructure.Implementation.Persistence.Repositories;
 using Test_Shop.Infrastructure.Implementation.Settings;
 using Test_Shop.Infrastructure.Interfaces.Repositories;
 using Test_Shop.Infrastructure.Interfaces.Services;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.Extensions.Configuration;
 using Test_Shop.Shared.Models.Identity;
+using Test_Shop.DataAccess.MsSql.Data;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
+using System.Reflection;
 
 namespace Test_Shop.Infrastructure.Implementation
 {

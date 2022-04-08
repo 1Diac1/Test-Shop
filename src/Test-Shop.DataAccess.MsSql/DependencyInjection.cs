@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+﻿using Test_Shop.Infrastructure.Interfaces.DataAccess;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 using Test_Shop.DataAccess.MsSql.Data;
-using Test_Shop.Infrastructure.Interfaces.DataAccess;
+using Microsoft.EntityFrameworkCore;
 
 namespace Test_Shop.DataAccess.MsSql
 {

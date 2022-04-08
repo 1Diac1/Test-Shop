@@ -1,14 +1,14 @@
-﻿using MediatR;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using Test_Shop.Infrastructure.Interfaces.DataAccess;
+using Test_Shop.Application.Features.Queries;
+using Test_Shop.Application.Features.DTOs;
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
-using Test_Shop.Application.Features.DTOs;
-using Test_Shop.Application.Features.Queries;
-using Test_Shop.Infrastructure.Interfaces.DataAccess;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Threading;
+using System.Linq;
+using AutoMapper;
+using MediatR;
 
 namespace Test_Shop.Application.Features.Handlers
 {

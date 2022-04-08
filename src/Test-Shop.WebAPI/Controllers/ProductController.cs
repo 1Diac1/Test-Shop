@@ -1,14 +1,15 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using Test_Shop.Application.Features.Commands;
+using Test_Shop.Application.Features.Queries;
+using Microsoft.AspNetCore.Authorization;
+using Test_Shop.WebAPI.Contracts.V1;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Test_Shop.Application.Features.Commands;
-using Test_Shop.Application.Features.Queries;
-using Test_Shop.WebAPI.Contracts.V1;
+using System.Threading.Tasks;
+using System;
 
 namespace Test_Shop.WebAPI.Controllers
 {
-    //[Authorize(Policy = "Admin")]
+    [Authorize(Policy = "Admin")]
     public class ProductController : BaseApiController
     {
         [HttpGet( ApiRoutes.Product.GetAll)]

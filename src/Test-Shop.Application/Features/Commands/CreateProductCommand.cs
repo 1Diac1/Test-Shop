@@ -1,6 +1,6 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using MediatR;
-using System.ComponentModel.DataAnnotations.Schema;
+using System;
 
 namespace Test_Shop.Application.Features.Commands
 {

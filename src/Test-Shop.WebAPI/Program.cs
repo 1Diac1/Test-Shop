@@ -1,12 +1,12 @@
+using Microsoft.Extensions.DependencyInjection;
+using Test_Shop.Shared.Models.Identity;
+using Test_Shop.DataAccess.MsSql.Data;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.DependencyInjection;
-using Test_Shop.DataAccess.MsSql.Data;
-using Test_Shop.Shared.Models.Identity;
+using System;
 
 namespace Test_Shop.WebAPI
 {

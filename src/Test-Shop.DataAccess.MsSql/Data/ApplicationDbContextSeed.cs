@@ -1,8 +1,8 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
+﻿using Test_Shop.Shared.Models.Identity;
 using Microsoft.AspNetCore.Identity;
 using Test_Shop.Domain.Entities;
-using Test_Shop.Shared.Models.Identity;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace Test_Shop.DataAccess.MsSql.Data
 {

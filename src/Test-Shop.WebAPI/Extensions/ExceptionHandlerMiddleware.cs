@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Test_Shop.Shared.Models.Responses;
+using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
 using FluentValidation;
-using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
-using Test_Shop.Shared.Models.Responses;
+using System.Linq;
+using System;
 
 namespace Test_Shop.WebAPI.Extensions
 {
