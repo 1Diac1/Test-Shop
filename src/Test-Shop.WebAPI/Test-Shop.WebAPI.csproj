@@ -19,7 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Test-Shop.Application\Test-Shop.Application.csproj" />
     <ProjectReference Include="..\Test-Shop.DataAccess.MsSql\Test-Shop.DataAccess.MsSql.csproj" />
-    <ProjectReference Include="..\Test-Shop.Infrastructure\Test-Shop.Infrastructure.Implementation.csproj" />
+    <ProjectReference Include="..\Test-Shop.Infrastructure.Implementation\Test-Shop.Infrastructure.Implementation.csproj" />
   </ItemGroup>
 
 </Project>

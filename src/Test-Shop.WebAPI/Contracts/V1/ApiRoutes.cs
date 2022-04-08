@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace Test_Shop.WebAPI.Contracts.V1
+﻿namespace Test_Shop.WebAPI.Contracts.V1
 {
     public static class ApiRoutes
     {
