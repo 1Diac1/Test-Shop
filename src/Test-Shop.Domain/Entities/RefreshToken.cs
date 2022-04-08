@@ -12,5 +12,11 @@ namespace Test_Shop.Domain.Entities
         {
             Id = Guid.NewGuid();
         }
+
+        public RefreshToken(string token, string userId)
+        {
+            Token = token;
+            UserId = userId;
+        }
     }
 }

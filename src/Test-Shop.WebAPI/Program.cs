@@ -1,39 +1,51 @@
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
-using Test_Shop.Application.Common.Models;
-using Test_Shop.Infrastructure.Persistence.Data;
+using Test_Shop.DataAccess.MsSql.Data;
+using Test_Shop.Shared.Models.Identity;
 
 namespace Test_Shop.WebAPI
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())
             {
-                var serviceProvider = scope.ServiceProvider;
+                var services = scope.ServiceProvider;
 
                 try
                 {
-                    var context = serviceProvider.GetRequiredService<ApplicationDbContext>();
-                    DbInitializer.Initialize(context);
+                    var context = services.GetRequiredService<ApplicationDbContext>();
+
+                    //if (context.Database.IsSqlServer())
+                    //    context.Database.Migrate();
+
+                    context.Database.EnsureCreated();
+
+                    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+                    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+
+                    await ApplicationDbContextSeed.SeedDefaultUserAsync(userManager, roleManager);
+                    await ApplicationDbContextSeed.SeedSampleDataAsync(context);
                 }
-                catch (Exception e)
+                catch (Exception ex)
                 {
-                    // ignored
+                    var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+
+                    logger.LogError(ex, "An error occurred while migrating or seeding the database.");
+
+                    throw;
                 }
             }
 
-            host.Run();
+            await host.RunAsync();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

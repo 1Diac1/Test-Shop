@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using AutoMapper;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Test_Shop.Application.Common.Exceptions;
 using Test_Shop.Application.Features.Commands;
-using Test_Shop.Application.Interfaces;
-using Test_Shop.Application.Interfaces.Repositories;
 using Test_Shop.Domain.Entities;
+using Test_Shop.Infrastructure.Interfaces.DataAccess;
 
 namespace Test_Shop.Application.Features.Handlers
 {
@@ -28,7 +27,8 @@ namespace Test_Shop.Application.Features.Handlers
 
         public async Task<Unit> Handle(DeleteProductByIdCommand request, CancellationToken cancellationToken)
         {
-            var entity = await _applicationDbContext.Products.FindAsync(request.Id, cancellationToken);
+            var entity = await _applicationDbContext.Products
+                .FirstOrDefaultAsync(p => p.Id == request.Id, cancellationToken);
 
             if (entity is null)
                 throw new NotFoundException(nameof(Product), request.Id);

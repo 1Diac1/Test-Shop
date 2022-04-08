@@ -6,13 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Test-Shop.Common\Test-Shop.Common.csproj" />
-    <ProjectReference Include="..\Test-Shop.Entities\Test-Shop.Entities.csproj" />
+    <ProjectReference Include="..\Test-Shop.Domain\Test-Shop.Domain.csproj" />
+    <ProjectReference Include="..\Test-Shop.Shared\Test-Shop.Shared.csproj" />
   </ItemGroup>
 
 </Project>

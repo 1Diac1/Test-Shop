@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
-using Test_Shop.Application.Common.Models;
-using Test_Shop.Application.Common.Models.Responses;
+using Test_Shop.Shared.Models.Responses;
 
 namespace Test_Shop.WebAPI.Extensions
 {

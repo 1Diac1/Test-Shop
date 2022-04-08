@@ -3,7 +3,7 @@ using Test_Shop.Infrastructure.Interfaces.Mappings;
 
 namespace Test_Shop.UseCases.Handlers.Dto
 {
-    public class CreateOrderDto : IMapWith<Order>
+    public class CreateOrderDto 
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

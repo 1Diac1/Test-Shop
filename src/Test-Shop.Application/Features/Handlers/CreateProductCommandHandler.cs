@@ -4,8 +4,8 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Test_Shop.Application.Features.Commands;
-using Test_Shop.Application.Interfaces;
 using Test_Shop.Domain.Entities;
+using Test_Shop.Infrastructure.Interfaces.DataAccess;
 
 namespace Test_Shop.Application.Features.Handlers
 {

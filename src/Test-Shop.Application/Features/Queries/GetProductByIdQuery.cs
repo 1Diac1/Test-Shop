@@ -7,5 +7,10 @@ namespace Test_Shop.Application.Features.Queries
     public class GetProductByIdQuery : IRequest<ProductDto> 
     {
         public Guid Id { get; set; }
+
+        public GetProductByIdQuery(Guid id)
+        {
+            Id = id;
+        }
     }
 }

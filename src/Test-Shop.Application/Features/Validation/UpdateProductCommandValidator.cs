@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using FluentValidation;
 using Test_Shop.Application.Features.Commands;
-using Test_Shop.Application.Interfaces.Repositories;
+using Test_Shop.Infrastructure.Interfaces.Repositories;
 
 namespace Test_Shop.Application.Features.Validation
 {

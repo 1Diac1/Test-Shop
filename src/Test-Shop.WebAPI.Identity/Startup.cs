@@ -6,8 +6,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Test_Shop.Application;
-using Test_Shop.Infrastructure.Identity;
-using Test_Shop.Infrastructure.Persistence;
 using Test_Shop.WebAPI.Extensions;
 
 namespace Test_Shop.WebAPI.Identity
@@ -24,8 +22,6 @@ namespace Test_Shop.WebAPI.Identity
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApplicationServices();
-            services.AddPersistenceServices(Configuration);
-            services.AddIdentityServices(Configuration);
 
             services.AddControllers();
         }

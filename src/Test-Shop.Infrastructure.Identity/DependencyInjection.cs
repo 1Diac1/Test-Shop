@@ -9,7 +9,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Test_Shop.Application.Interfaces.Services;
 using Test_Shop.Domain.Entities;
-using Test_Shop.Domain.Settings;
 using Test_Shop.Infrastructure.Identity.Data;
 using Test_Shop.Infrastructure.Identity.Helpers;
 using Test_Shop.Infrastructure.Identity.Services;

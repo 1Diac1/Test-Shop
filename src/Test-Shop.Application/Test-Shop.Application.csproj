@@ -6,8 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="11.0.1" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="FluentValidation" Version="10.3.6" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.3.6" />
     <PackageReference Include="MediatR" Version="10.0.1" />
@@ -19,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Test-Shop.Domain\Test-Shop.Domain.csproj" />
+    <ProjectReference Include="..\Test-Shop.Infrastructure.Interfaces\Test-Shop.Infrastructure.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

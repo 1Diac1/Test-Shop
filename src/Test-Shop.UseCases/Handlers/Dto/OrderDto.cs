@@ -4,7 +4,7 @@ using Test_Shop.Infrastructure.Interfaces.Mappings;
 
 namespace Test_Shop.UseCases.Handlers.Dto
 {
-    public class OrderDto : IMapWith<Order>
+    public class OrderDto 
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

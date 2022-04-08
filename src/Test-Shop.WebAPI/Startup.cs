@@ -1,12 +1,16 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Test_Shop.Application;
-using Test_Shop.Infrastructure.Identity;
-using Test_Shop.Infrastructure.Persistence;
-using Test_Shop.WebAPI.Extensions;
+using Test_Shop.DataAccess.MsSql;
+using Test_Shop.DataAccess.MsSql.Data;
+using Test_Shop.Infrastructure.Implementation;
+using Test_Shop.Infrastructure.Interfaces.Services;
+using Test_Shop.WebAPI.Filters;
+using Test_Shop.WebAPI.Services;
 
 namespace Test_Shop.WebAPI
 {
@@ -21,11 +25,25 @@ namespace Test_Shop.WebAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDataAccessMsSqlServices(Configuration);
+            services.AddInfrastructureServices(Configuration);
             services.AddApplicationServices();
-            services.AddPersistenceServices(Configuration);
-            services.AddIdentityServices(Configuration);
 
-            services.AddControllers().AddNewtonsoftJson();
+            services.AddSingleton<ICurrentUserService, CurrentUserService>();
+
+            services.AddHttpContextAccessor();
+
+            services.AddControllers(options =>
+                    options.Filters.Add<ApiExceptionFilterAttribute>())
+                .AddNewtonsoftJson();
+
+            services.Configure<ApiBehaviorOptions>(options =>
+                options.SuppressModelStateInvalidFilter = true);
+
+            services.AddHealthChecks()
+                .AddDbContextCheck<ApplicationDbContext>();
+
+            services.AddSwaggerGen();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -33,14 +51,28 @@ namespace Test_Shop.WebAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseMigrationsEndPoint();
             }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                app.UseHsts();
+            }
+
+            app.UseHealthChecks("/health");
+            app.UseHttpsRedirection();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Test-Shop API v1");
+            });
 
             app.UseRouting();
 
             app.UseAuthentication();
+            app.UseIdentityServer();
             app.UseAuthorization();
-
-            app.UseCustomExceptionHandler();
 
             app.UseEndpoints(endpoints =>
             {

@@ -8,7 +8,7 @@ using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 using Test_Shop.Application.Features.DTOs;
 using Test_Shop.Application.Features.Queries;
-using Test_Shop.Application.Interfaces;
+using Test_Shop.Infrastructure.Interfaces.DataAccess;
 
 namespace Test_Shop.Application.Features.Handlers
 {

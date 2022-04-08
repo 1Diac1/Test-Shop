@@ -2,11 +2,13 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
+using Microsoft.AspNetCore.Http.Features;
+using Microsoft.EntityFrameworkCore;
 using Test_Shop.Application.Common.Exceptions;
 using Test_Shop.Application.Features.DTOs;
 using Test_Shop.Application.Features.Queries;
-using Test_Shop.Application.Interfaces;
 using Test_Shop.Domain.Entities;
+using Test_Shop.Infrastructure.Interfaces.DataAccess;
 
 namespace Test_Shop.Application.Features.Handlers
 {
@@ -26,7 +28,8 @@ namespace Test_Shop.Application.Features.Handlers
 
         public async Task<ProductDto> Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
         {
-            var entity = await _applicationDbContext.Products.FindAsync(request.Id, cancellationToken);
+            var entity = await _applicationDbContext.Products
+                .FirstOrDefaultAsync(p => p.Id == request.Id, cancellationToken);
 
             if (entity is null)
                 throw new NotFoundException(nameof(Product), cancellationToken);

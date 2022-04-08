@@ -3,8 +3,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Test_Shop.Application.Common.Models.Requests;
-using Test_Shop.Application.Interfaces.Services;
+using Test_Shop.Infrastructure.Interfaces.Services;
+using Test_Shop.Shared.Models.Requests;
 
 namespace Test_Shop.WebAPI.Identity.Controllers
 {
@@ -28,9 +28,6 @@ namespace Test_Shop.WebAPI.Identity.Controllers
         {
             var result = await _identityService.LoginAsync(request);
 
-            if (result.Success is false)
-                return BadRequest(result);
-
             return Ok(result);
         }
 
@@ -39,9 +36,6 @@ namespace Test_Shop.WebAPI.Identity.Controllers
         {
             var result = await _identityService.RegisterAsync(request);
 
-            if (result.Success is false)
-                return BadRequest(result);
-
             return Ok(result);
         }
 
@@ -49,9 +43,6 @@ namespace Test_Shop.WebAPI.Identity.Controllers
         public async Task<IActionResult> RefreshTokenAsync([FromBody] RefreshTokenRequest request)
         {
             var result = await _identityService.RefreshTokenAsync(request);
-
-            if (result.Success is false)
-                return BadRequest(result);
 
             return Ok(request);
         }
