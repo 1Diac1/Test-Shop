@@ -5,7 +5,7 @@ namespace Test_Shop.Shared.Models
 {
     public class Result
     {
-        public IEnumerable<string> Errors { get; set; }
+        public IEnumerable<string> Errors { get; set; } = new List<string>();
         public string AccessToken { get; set; }
         public string RefreshToken { get; set; }
         public bool Succeeded { get; set; }

@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using System;
 
-namespace Test_Shop.Application.Features.Commands
+namespace Test_Shop.Application.Features.Commands.Product
 {
     public class UpdateProductCommand : IRequest
     {

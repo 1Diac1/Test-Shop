@@ -11,5 +11,11 @@ namespace Test_Shop.Shared.Models.Requests
         [Required(ErrorMessage = "Password not specified")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        public LoginRequest(string email, string password)
+        {
+            Email = email;
+            Password = password;
+        }
     }
 }

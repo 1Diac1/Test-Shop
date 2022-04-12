@@ -2,10 +2,9 @@ using Test_Shop.Infrastructure.Interfaces.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Test_Shop.Infrastructure.Implementation;
 using Microsoft.Extensions.Configuration;
-using Test_Shop.DataAccess.MsSql.Data;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Builder;
 using Test_Shop.DataAccess.MsSql;
 using Test_Shop.WebAPI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -70,7 +69,6 @@ namespace Test_Shop.WebAPI
             app.UseRouting();
 
             app.UseAuthentication();
-            app.UseIdentityServer();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

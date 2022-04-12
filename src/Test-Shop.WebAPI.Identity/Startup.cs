@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Test_Shop.Application;
+using Test_Shop.DataAccess.MsSql;
+using Test_Shop.Infrastructure.Implementation;
 using Test_Shop.WebAPI.Extensions;
 
 namespace Test_Shop.WebAPI.Identity
@@ -21,6 +23,8 @@ namespace Test_Shop.WebAPI.Identity
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDataAccessMsSqlServices(Configuration);
+            services.AddInfrastructureServices(Configuration);
             services.AddApplicationServices();
 
             services.AddControllers();

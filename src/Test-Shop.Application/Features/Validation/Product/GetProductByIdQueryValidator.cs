@@ -1,7 +1,7 @@
 ﻿using Test_Shop.Application.Features.Queries;
 using FluentValidation;
 
-namespace Test_Shop.Application.Features.Validation
+namespace Test_Shop.Application.Features.Validation.Product
 {
     public class GetProductByIdQueryValidator : AbstractValidator<GetProductByIdQuery>
     {

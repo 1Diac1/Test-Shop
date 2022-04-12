@@ -10,9 +10,10 @@ using System.Linq;
 using AutoMapper;
 using MediatR;
 
-namespace Test_Shop.Application.Features.Handlers
+namespace Test_Shop.Application.Features.Handlers.Product
 {
-    public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, IEnumerable<ProductDto>>
+    public class GetAllProductsQueryHandler 
+        : IRequestHandler<GetAllProductsQuery, IEnumerable<ProductDto>>
     {
         private readonly IApplicationDbContext _applicationDbContext;
         private readonly IMapper _mapper;

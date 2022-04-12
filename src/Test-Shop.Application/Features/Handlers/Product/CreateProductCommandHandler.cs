@@ -1,15 +1,16 @@
 ﻿using Test_Shop.Infrastructure.Interfaces.DataAccess;
 using Test_Shop.Application.Features.Commands;
 using Microsoft.Extensions.Logging;
-using Test_Shop.Domain.Entities;
 using System.Threading.Tasks;
 using System.Threading;
-using MediatR;
 using System;
+using MediatR;
+using Test_Shop.Application.Features.Commands.Product;
 
-namespace Test_Shop.Application.Features.Handlers
+namespace Test_Shop.Application.Features.Handlers.Product
 {
-    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, Guid>
+    public class CreateProductCommandHandler 
+        : IRequestHandler<CreateProductCommand, Guid>
     {
         private readonly IApplicationDbContext _applicationDbContext;
         private readonly ILogger _logger;
@@ -24,7 +25,7 @@ namespace Test_Shop.Application.Features.Handlers
 
         public async Task<Guid> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
-            var entity = new Product
+            var entity = new Domain.Entities.Product
             {
                 Name = request.Name,
                 Description = request.Description,

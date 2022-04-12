@@ -1,10 +1,10 @@
 ﻿using Test_Shop.Infrastructure.Interfaces.Repositories;
-using Test_Shop.Application.Features.Commands;
+using Test_Shop.Application.Features.Commands.Product;
 using System.Threading.Tasks;
-using System.Threading;
 using FluentValidation;
+using System.Threading;
 
-namespace Test_Shop.Application.Features.Validation
+namespace Test_Shop.Application.Features.Validation.Product
 {
     public class CreateProductCommandValidator : AbstractValidator<CreateProductCommand>
     {

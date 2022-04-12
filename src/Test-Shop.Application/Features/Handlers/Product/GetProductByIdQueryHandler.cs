@@ -3,13 +3,12 @@ using Test_Shop.Application.Common.Exceptions;
 using Test_Shop.Application.Features.Queries;
 using Test_Shop.Application.Features.DTOs;
 using Microsoft.EntityFrameworkCore;
-using Test_Shop.Domain.Entities;
 using System.Threading.Tasks;
 using System.Threading;
 using AutoMapper;
 using MediatR;
 
-namespace Test_Shop.Application.Features.Handlers
+namespace Test_Shop.Application.Features.Handlers.Product
 {
     public class GetProductByIdQueryHandler
         : IRequestHandler<GetProductByIdQuery, ProductDto>
@@ -31,9 +30,9 @@ namespace Test_Shop.Application.Features.Handlers
                 .FirstOrDefaultAsync(p => p.Id == request.Id, cancellationToken);
 
             if (entity is null)
-                throw new NotFoundException(nameof(Product), cancellationToken);
+                throw new NotFoundException(nameof(Domain.Entities.Product), cancellationToken);
 
-            var mappedEntity = _mapper.Map<Product, ProductDto>(entity);
+            var mappedEntity = _mapper.Map<Domain.Entities.Product, ProductDto>(entity);
 
             return mappedEntity;
         }

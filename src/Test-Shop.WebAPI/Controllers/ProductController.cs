@@ -1,4 +1,4 @@
-﻿using Test_Shop.Application.Features.Commands;
+﻿using Test_Shop.Application.Features.Commands.Product;
 using Test_Shop.Application.Features.Queries;
 using Microsoft.AspNetCore.Authorization;
 using Test_Shop.WebAPI.Contracts.V1;

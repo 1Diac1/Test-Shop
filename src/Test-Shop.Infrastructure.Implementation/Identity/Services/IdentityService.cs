@@ -39,9 +39,9 @@ namespace Test_Shop.Infrastructure.Implementation.Identity.Services
             if (result is false)
                 return Result.Failure("Login or Password don't correct.");
 
-            var authenticate = await _authenticator.Authenticate(user);
+            var response = await _authenticator.Authenticate(user);
 
-            return authenticate;
+            return response;
         }
 
         public async Task<Result> RegisterAsync(RegisterRequest request)
@@ -65,7 +65,12 @@ namespace Test_Shop.Infrastructure.Implementation.Identity.Services
 
             var result = await _userManager.CreateAsync(newUser, request.Password);
 
-            return result.ToApplicationResult();
+            if (result.Succeeded is false)
+                return result.ToApplicationResult();
+
+            var response = await _authenticator.Authenticate(newUser);
+
+            return response;
         }
 
         public async Task<Result> RefreshTokenAsync(RefreshTokenRequest request)

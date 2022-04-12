@@ -21,6 +21,7 @@ namespace Test_Shop.WebAPI.Filters
                 [typeof(UnauthorizedAccessException)] = HandleUnauthorizedAccessException,
                 [typeof(ForbiddenAccessException)] = HandleForbiddenAccessException,
                 [typeof(ValidationException)] = HandleValidationException,
+                [typeof(BadRequestException)] = HandleBadRequestException,
                 [typeof(FluentValidation.ValidationException)] = HandleFluentValidationException
             };
         }
@@ -64,6 +65,21 @@ namespace Test_Shop.WebAPI.Filters
             context.ExceptionHandled = true;
         }
 
+        private void HandleBadRequestException(ExceptionContext context)
+        {
+            var exception = (BadRequestException) context.Exception;
+
+            var details = new ProblemDetails
+            {
+                Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                Title = "Bad request.",
+                Detail = exception.Message
+            };
+
+            context.Result = new BadRequestObjectResult(details);
+            context.ExceptionHandled = true;
+        }
+
         private void HandleFluentValidationException(ExceptionContext context)
         {
             var exception = (FluentValidation.ValidationException)context.Exception;
@@ -98,7 +114,7 @@ namespace Test_Shop.WebAPI.Filters
             var details = new ProblemDetails
             {
                 Status = StatusCodes.Status401Unauthorized,
-                Title = "Unauthorized",
+                Title = "Unauthorized.",
                 Type = "https://tools.ietf.org/html/rfc7235#section-3.1"
             };
 
@@ -115,7 +131,7 @@ namespace Test_Shop.WebAPI.Filters
             var details = new ProblemDetails
             {
                 Status = StatusCodes.Status403Forbidden,
-                Title = "Forbidden",
+                Title = "Forbidden.",
                 Type = "https://tools.ietf.org/html/rfc7231#section-6.5.3"
             };
 

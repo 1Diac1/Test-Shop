@@ -14,5 +14,13 @@
             public const string Update = Base + "/product/update";
             public const string Delete = Base + "/product/{id}";
         }
+
+        public static class Authentication
+        {
+            public const string Register = Base + "/auth/register";
+            public const string Refresh = Base + "/auth/refresh";
+            public const string Logout = Base + "/auth/logout";
+            public const string Login = Base + "/auth/login";
+        }
     }
 }

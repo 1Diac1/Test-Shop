@@ -3,13 +3,13 @@ using Test_Shop.Application.Common.Exceptions;
 using Test_Shop.Application.Features.Commands;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Test_Shop.Domain.Entities;
 using System.Threading.Tasks;
 using System.Threading;
 using MediatR;
 using System;
+using Test_Shop.Application.Features.Commands.Product;
 
-namespace Test_Shop.Application.Features.Handlers
+namespace Test_Shop.Application.Features.Handlers.Product
 {
     public class DeleteProductByIdCommandHandler 
         : IRequestHandler<DeleteProductByIdCommand>
@@ -31,7 +31,7 @@ namespace Test_Shop.Application.Features.Handlers
                 .FirstOrDefaultAsync(p => p.Id == request.Id, cancellationToken);
 
             if (entity is null)
-                throw new NotFoundException(nameof(Product), request.Id);
+                throw new NotFoundException(nameof(Domain.Entities.Product), request.Id);
 
             _applicationDbContext.Products.Remove(entity);
             await _applicationDbContext.SaveChangesAsync(cancellationToken);

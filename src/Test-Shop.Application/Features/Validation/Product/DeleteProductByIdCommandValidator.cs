@@ -1,7 +1,7 @@
-﻿using Test_Shop.Application.Features.Commands;
+﻿using Test_Shop.Application.Features.Commands.Product;
 using FluentValidation;
 
-namespace Test_Shop.Application.Features.Validation
+namespace Test_Shop.Application.Features.Validation.Product
 {
     public class DeleteProductByIdCommandValidator : AbstractValidator<DeleteProductByIdCommand>
     {

@@ -24,5 +24,15 @@ namespace Test_Shop.Shared.Models.Requests
         [UIHint("Password")]
         [Compare("Password", ErrorMessage = "Password entered incorrectly")]
         public string ConfirmPassword { get; set; }
+
+        public RegisterRequest(string firstName, string lastName, string email, string phoneNumber, string password, string confirmPassword)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            PhoneNumber = phoneNumber;
+            Password = password;
+            ConfirmPassword = confirmPassword;
+        }
     }
 }
