@@ -1,31 +1,46 @@
-﻿namespace Test_Shop.WebAPI.Extensions
+﻿using System;
+using System.Linq;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
+
+namespace Test_Shop.WebAPI.Extensions
 {
     public static class SwaggerServiceExtensions
     {
-        //public static IServiceCollection AddSwaggerDocumentation(this IServiceCollection services)
-        //{
-        //    services.AddOpenApiDocument(document =>
-        //    {
-        //        document.DocumentName = "v1";
-        //        document.PostProcess = d =>
-        //        {
-        //            d.Info.Version = "v1";
-        //            d.Info.Title = "Main API v1.0";
-        //        };
+        public static IServiceCollection AddSwaggerDocumentation(this IServiceCollection services)
+        {
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Test-Shop API",
+                    Version = "v1"
+                });
+                c.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Description = "Please insert JWT with Bearer into field.",
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement 
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        Array.Empty<string>()
+                    }
+                });
+            });
 
-        //        document.AddSecurity("apikey", Enumerable.Empty<string>(), new OpenApiSecurityScheme
-        //        {
-        //            Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
-        //            Type = OpenApiSecuritySchemeType.ApiKey,
-        //            Name = "Authorization",
-        //            In = OpenApiSecurityApiKeyLocation.Header
-        //        });
-
-        //        document.OperationProcessors.Add(
-        //            new OperationSecurityScopeProcessor("bearer"));
-        //    });
-
-        //    return services;
-        //}
+            return services;
+        }
     }
 }

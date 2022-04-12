@@ -10,6 +10,7 @@ using Test_Shop.WebAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Test_Shop.WebAPI.Filters;
 using Test_Shop.Application;
+using Test_Shop.WebAPI.Extensions;
 
 namespace Test_Shop.WebAPI
 {
@@ -42,7 +43,7 @@ namespace Test_Shop.WebAPI
             services.AddHealthChecksUI()
                 .AddInMemoryStorage();
 
-            services.AddSwaggerGen();
+            services.AddSwaggerDocumentation();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
