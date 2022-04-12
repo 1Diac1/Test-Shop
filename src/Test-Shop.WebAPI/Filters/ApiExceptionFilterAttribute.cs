@@ -82,7 +82,7 @@ namespace Test_Shop.WebAPI.Filters
 
         private void HandleFluentValidationException(ExceptionContext context)
         {
-            var exception = (FluentValidation.ValidationException)context.Exception;
+            var exception = (FluentValidation.ValidationException) context.Exception;
 
             var details = new ProblemDetails
             {
