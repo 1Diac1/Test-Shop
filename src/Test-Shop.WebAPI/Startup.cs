@@ -5,12 +5,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Builder;
+using Test_Shop.WebAPI.Extensions;
 using Test_Shop.DataAccess.MsSql;
 using Test_Shop.WebAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Test_Shop.WebAPI.Filters;
 using Test_Shop.Application;
-using Test_Shop.WebAPI.Extensions;
 
 namespace Test_Shop.WebAPI
 {
