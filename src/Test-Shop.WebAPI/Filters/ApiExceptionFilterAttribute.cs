@@ -72,9 +72,10 @@ namespace Test_Shop.WebAPI.Filters
             var details = new ProblemDetails
             {
                 Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-                Title = "Bad request.",
-                Detail = exception.Message
+                Title = "Bad request."
             };
+
+            details.Extensions.Add("errors", exception.Errors);
 
             context.Result = new BadRequestObjectResult(details);
             context.ExceptionHandled = true;
@@ -87,8 +88,10 @@ namespace Test_Shop.WebAPI.Filters
             var details = new ProblemDetails
             {
                 Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-                Detail = string.Join(", ", exception.Errors.Select(e => e.ErrorMessage))
+                Title = "Validation failed."
             };
+
+            details.Extensions.Add("errors", exception.Errors.Select(e => e.ErrorMessage));
 
             context.Result = new BadRequestObjectResult(details);
             context.ExceptionHandled = true;

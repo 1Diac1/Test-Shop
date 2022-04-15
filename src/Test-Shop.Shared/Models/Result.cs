@@ -10,6 +10,10 @@ namespace Test_Shop.Shared.Models
         public string RefreshToken { get; set; }
         public bool Succeeded { get; set; }
 
+        public Result()
+        {
+        }
+
         public Result(bool succeeded, IEnumerable<string> errors)
         {
             Succeeded = succeeded;

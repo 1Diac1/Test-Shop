@@ -2,7 +2,7 @@
 using MediatR;
 using System;
 
-namespace Test_Shop.Application.Features.Queries
+namespace Test_Shop.Application.Features.Queries.Product
 {
     public class GetProductByIdQuery : IRequest<ProductDto> 
     {

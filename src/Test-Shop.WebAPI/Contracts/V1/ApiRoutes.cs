@@ -22,5 +22,13 @@
             public const string Logout = Base + "/auth/logout";
             public const string Login = Base + "/auth/login";
         }
+
+        public static class Account
+        {
+            public const string ChangePassword = Base + "/account/changepassword";
+            public const string ForgotPassword = Base + "/account/forgotpassword";
+            public const string ResetPassword = Base + "/account/resetpassword";
+            public const string ConfirmEmail = Base + "/account/confirmemail";
+        }
     }
 }

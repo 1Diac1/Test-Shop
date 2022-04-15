@@ -1,6 +1,6 @@
 ﻿using Test_Shop.Infrastructure.Interfaces.DataAccess;
+using Test_Shop.Application.Features.Queries.Product;
 using Test_Shop.Application.Common.Exceptions;
-using Test_Shop.Application.Features.Queries;
 using Test_Shop.Application.Features.DTOs;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;

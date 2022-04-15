@@ -5,6 +5,7 @@ using Test_Shop.Infrastructure.Interfaces.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Test_Shop.Infrastructure.Interfaces.Services;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Test_Shop.Shared.Models.Identity;
 using Test_Shop.DataAccess.MsSql.Data;
@@ -23,19 +24,24 @@ namespace Test_Shop.Infrastructure.Implementation
         {
             services.AddScoped<TokenManager>();
             services.AddScoped<Authenticator>();
+            services.AddScoped<IEmailService, EmailService>();
             services.AddTransient<IAuthService, AuthService>();
             services.AddScoped<IIdentityService, IdentityService>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IRefreshTokenService, RefreshTokenService>();
-                
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
+
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
+            services.Configure<EmailConfiguration>(configuration.GetSection("EmailConfiguration"));
             services.Configure<JwtConfiguration>(configuration.GetSection("JwtConfiguration"));
+            services.Configure<EmailRoute>(configuration.GetSection("EmailRoute"));
 
             services
                 .AddDefaultIdentity<ApplicationUser>()
                 .AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(o =>

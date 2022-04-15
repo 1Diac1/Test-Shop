@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using System;
+using Test_Shop.Application.Features.Queries.Product;
 
 namespace Test_Shop.WebAPI.Controllers
 {

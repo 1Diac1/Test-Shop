@@ -2,7 +2,7 @@
 using Test_Shop.Shared.Models;
 using System.Linq;
 
-namespace Test_Shop.Infrastructure.Implementation.Identity
+namespace Test_Shop.Shared.Extensions
 {
     public static class IdentityResultExtensions
     {

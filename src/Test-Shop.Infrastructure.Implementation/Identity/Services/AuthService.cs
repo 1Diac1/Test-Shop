@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Test_Shop.Shared.Models.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Test_Shop.Shared.Extensions;
 using Test_Shop.Shared.Models;
 using System.Threading.Tasks;
 using System.Linq;

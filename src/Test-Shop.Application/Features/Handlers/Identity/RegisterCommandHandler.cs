@@ -26,7 +26,7 @@ namespace Test_Shop.Application.Features.Handlers.Identity
             var result = await _identityService.RegisterAsync(registerRequest);
 
             if (result.Succeeded is false)
-                throw new BadRequestException("Some error has occurred.");
+                throw new BadRequestException(result.Errors);
 
             return result;
         }

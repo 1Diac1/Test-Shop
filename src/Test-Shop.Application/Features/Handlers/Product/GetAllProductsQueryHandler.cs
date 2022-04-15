@@ -1,5 +1,5 @@
 ﻿using Test_Shop.Infrastructure.Interfaces.DataAccess;
-using Test_Shop.Application.Features.Queries;
+using Test_Shop.Application.Features.Queries.Product;
 using Test_Shop.Application.Features.DTOs;
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;

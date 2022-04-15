@@ -25,7 +25,7 @@ namespace Test_Shop.Application.Features.Handlers.Identity
             var result = await _identityService.LoginAsync(loginRequest);
 
             if (result.Succeeded is false)
-                throw new BadRequestException("Login or Password don't correct.");
+                throw new BadRequestException(result.Errors);
 
             return result;
         }

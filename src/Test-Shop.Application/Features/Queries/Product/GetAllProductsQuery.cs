@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using MediatR;
 
-namespace Test_Shop.Application.Features.Queries
+namespace Test_Shop.Application.Features.Queries.Product
 {
     public class GetAllProductsQuery : IRequest<IEnumerable<ProductDto>>
     {

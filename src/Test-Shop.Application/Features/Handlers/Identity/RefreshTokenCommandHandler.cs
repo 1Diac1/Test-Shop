@@ -25,7 +25,7 @@ namespace Test_Shop.Application.Features.Handlers.Identity
             var result = await _identityService.RefreshTokenAsync(refreshTokenRequest);
 
             if (result.Succeeded is false)
-                throw new BadRequestException("Refresh Token not found.");
+                throw new BadRequestException(result.Errors);
 
             return result;
         }

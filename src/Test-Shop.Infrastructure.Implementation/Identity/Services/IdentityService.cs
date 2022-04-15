@@ -2,28 +2,31 @@
 using Test_Shop.Shared.Models.Identity;
 using Test_Shop.Shared.Models.Requests;
 using Microsoft.AspNetCore.Identity;
+using Test_Shop.Shared.Extensions;
 using Test_Shop.Shared.Models;
 using System.Threading.Tasks;
-using System;
 
 namespace Test_Shop.Infrastructure.Implementation.Identity.Services
 {
     public class IdentityService : IIdentityService
     {
-        private readonly UserManager<ApplicationUser> _userManager;
         private readonly IRefreshTokenService _refreshTokenService;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly Authenticator _authenticator;
+        private readonly IEmailService _emailService;
         private readonly TokenManager _tokenManager;
 
         public IdentityService(
-            UserManager<ApplicationUser> userManager,
             IRefreshTokenService refreshTokenService,
-            Authenticator authenticator, 
+            UserManager<ApplicationUser> userManager,
+            Authenticator authenticator,
+            IEmailService emailService,
             TokenManager tokenManager)
         {
-            _userManager = userManager;
             _refreshTokenService = refreshTokenService;
+            _userManager = userManager;
             _authenticator = authenticator;
+            _emailService = emailService;
             _tokenManager = tokenManager;
         }
 
@@ -31,13 +34,10 @@ namespace Test_Shop.Infrastructure.Implementation.Identity.Services
         {
             var user = await _userManager.FindByEmailAsync(request.Email);
 
-            if (user is null)
-                return Result.Failure("Login or Password don't correct.");
-
             var result = await _userManager.CheckPasswordAsync(user, request.Password);
 
             if (result is false)
-                return Result.Failure("Login or Password don't correct.");
+                return new Result().FailurePasswordMismatch();
 
             var response = await _authenticator.Authenticate(user);
 
@@ -46,14 +46,6 @@ namespace Test_Shop.Infrastructure.Implementation.Identity.Services
 
         public async Task<Result> RegisterAsync(RegisterRequest request)
         {
-            var user = await _userManager.FindByEmailAsync(request.Email);
-
-            if (!(user is null))
-                return Result.Failure("User with this Email already exists."); //Password mismatch.
-
-            if (!string.Equals(request.Password, request.ConfirmPassword, StringComparison.Ordinal))
-                return Result.Failure("Password mismatch.");
-
             var newUser = new ApplicationUser
             {
                 Email = request.Email,
@@ -67,6 +59,14 @@ namespace Test_Shop.Infrastructure.Implementation.Identity.Services
 
             if (result.Succeeded is false)
                 return result.ToApplicationResult();
+
+            var token = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
+            var confirmationLink = _emailService.GenerateConfirmationLink(newUser.Id, token);
+
+            await _emailService.SendEmailAsync(
+                "askdjk123sd1@gmail.com", 
+                "Confirmation email link",
+                $"Confirm your registration by following the <a href='{confirmationLink.Result}'>link</a>.");
 
             var response = await _authenticator.Authenticate(newUser);
 

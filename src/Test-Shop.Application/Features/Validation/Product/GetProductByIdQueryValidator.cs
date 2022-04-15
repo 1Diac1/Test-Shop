@@ -1,4 +1,4 @@
-﻿using Test_Shop.Application.Features.Queries;
+﻿using Test_Shop.Application.Features.Queries.Product;
 using FluentValidation;
 
 namespace Test_Shop.Application.Features.Validation.Product
