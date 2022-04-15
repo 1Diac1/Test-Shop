@@ -13,15 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test-Shop.Application", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test-Shop.WebAPI", "src\Test-Shop.WebAPI\Test-Shop.WebAPI.csproj", "{EB77F5EC-1150-4FB6-A72C-37B0E0D6BC65}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test-Shop.WebAPI.Identity", "src\Test-Shop.WebAPI.Identity\Test-Shop.WebAPI.Identity.csproj", "{8E903AFB-8A79-4343-8F33-459AF07E9D83}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test-Shop.DataAccess.MsSql", "src\Test-Shop.DataAccess.MsSql\Test-Shop.DataAccess.MsSql.csproj", "{6219BF13-19DB-441D-B620-33B086D0D6AD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test-Shop.Infrastructure.Interfaces", "src\Test-Shop.Infrastructure.Interfaces\Test-Shop.Infrastructure.Interfaces.csproj", "{0403F2F9-39C3-4BC5-A999-7130814FDB6B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test-Shop.Shared", "src\Test-Shop.Shared\Test-Shop.Shared.csproj", "{91FC445B-C57D-4CA4-A4BC-DD9ECD531A26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test-Shop.Infrastructure.Implementation", "src\Test-Shop.Infrastructure.Implementation\Test-Shop.Infrastructure.Implementation.csproj", "{732BDE2C-65D5-4626-8B11-F36641C8B81C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test-Shop.Infrastructure.Implementation", "src\Test-Shop.Infrastructure.Implementation\Test-Shop.Infrastructure.Implementation.csproj", "{732BDE2C-65D5-4626-8B11-F36641C8B81C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +39,6 @@ Global
 		{EB77F5EC-1150-4FB6-A72C-37B0E0D6BC65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB77F5EC-1150-4FB6-A72C-37B0E0D6BC65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB77F5EC-1150-4FB6-A72C-37B0E0D6BC65}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8E903AFB-8A79-4343-8F33-459AF07E9D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E903AFB-8A79-4343-8F33-459AF07E9D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E903AFB-8A79-4343-8F33-459AF07E9D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E903AFB-8A79-4343-8F33-459AF07E9D83}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6219BF13-19DB-441D-B620-33B086D0D6AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6219BF13-19DB-441D-B620-33B086D0D6AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6219BF13-19DB-441D-B620-33B086D0D6AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -69,7 +63,6 @@ Global
 		{7252E1C5-0F38-4D59-91DD-B39A5671CDEE} = {EFCC8DDA-EA4B-4107-B6AE-40CDCF51137F}
 		{9A410E0F-DCD7-4D1B-B11F-AB284E90C3F1} = {EFCC8DDA-EA4B-4107-B6AE-40CDCF51137F}
 		{EB77F5EC-1150-4FB6-A72C-37B0E0D6BC65} = {EFCC8DDA-EA4B-4107-B6AE-40CDCF51137F}
-		{8E903AFB-8A79-4343-8F33-459AF07E9D83} = {EFCC8DDA-EA4B-4107-B6AE-40CDCF51137F}
 		{6219BF13-19DB-441D-B620-33B086D0D6AD} = {EFCC8DDA-EA4B-4107-B6AE-40CDCF51137F}
 		{0403F2F9-39C3-4BC5-A999-7130814FDB6B} = {EFCC8DDA-EA4B-4107-B6AE-40CDCF51137F}
 		{91FC445B-C57D-4CA4-A4BC-DD9ECD531A26} = {EFCC8DDA-EA4B-4107-B6AE-40CDCF51137F}
